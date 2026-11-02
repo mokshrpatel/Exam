@@ -3,7 +3,6 @@ name: cicd pipeline
 on: push
 
 jobs:
-  name: Run File
   runs-on: ubuntu-latest
   steps:
     - name: Checkout
