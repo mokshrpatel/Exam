@@ -3,8 +3,8 @@ name: cicd pipeline
 on: push
 
 jobs:
-  run-python:
-    name: Running Python
+  run-test-cases:
+    name: Running Automated Tests in Python
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,5 +15,8 @@ jobs:
         with:
           python-version: "3.12"
       
-      - name: Run python
-        run: python mark.py
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run test cases
+        run: pytest test.py -v
